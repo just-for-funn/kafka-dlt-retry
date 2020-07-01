@@ -20,7 +20,7 @@ public class SampleConsumer {
 		log.info("message received {}", key);
 	}
 
-	@KafkaListener(id = "dltGroup", topics = "test.DLT")
+	//@KafkaListener(id = "dltGroup", topics = "test.DLT")
 	public void dltListen(String in) {
 		log.info("Received from DLT: " + in);
 	}

@@ -31,6 +31,6 @@ public class AppConfiguration {
 
 	SeekToCurrentErrorHandler errorHandler(KafkaOperations template) {
 		DeadLetterPublishingRecoverer recoverer = new DeadLetterPublishingRecoverer(template);
-		return new SeekToCurrentErrorHandler(recoverer, new FixedBackOff(5000L, 2L));
+		return new SeekToCurrentErrorHandler(recoverer, new FixedBackOff(500L, 2L));
 	}
 }
