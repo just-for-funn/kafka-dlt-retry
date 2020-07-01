@@ -13,11 +13,12 @@ public class SampleConsumer {
 	Map<String, AtomicInteger> counters = new HashMap<>();
 
 	@KafkaListener(topics = "test", groupId = "test")
-	public void onMessage(String key) {
-		if (key.startsWith("fail")) {
-			throw new RuntimeException("Will fail for: " + key);
+	public void onMessage(String data) {
+		if (data.startsWith("fail")) {
+			log.warn("Failing for " + data);
+			throw new RuntimeException("Will fail for: " + data);
 		}
-		log.info("message received {}", key);
+		log.info("message received {}", data);
 	}
 
 	//@KafkaListener(id = "dltGroup", topics = "test.DLT")
