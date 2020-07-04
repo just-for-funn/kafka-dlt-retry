@@ -14,11 +14,9 @@ import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.clients.consumer.ConsumerRecords;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
 import org.apache.kafka.common.TopicPartition;
-import org.springframework.stereotype.Controller;
 
 
 @Slf4j
-@Controller
 public class KafkaConsumerController {
 	private final Properties props;
 	private ExecutorService executor;
